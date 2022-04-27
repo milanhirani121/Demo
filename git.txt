@@ -1,0 +1,45 @@
+git  status (ckeck git repository status)
+git init (create repository)
+git add --a /or/ . (all file add in staging area)
+git add filename (file add in staging area)
+git restore --staged filename (file ko unstage karne ke liye)
+git checkout -- filename (change remove karne ke liye (Ctrl + z ki tarah))
+git checkout -f (all file change with last commit)
+git commit -m "massage" (commit file)
+git commit -a -m "massage" (commit all tracked file)
+dit commit --amend (commit ko marge karne ke liye)
+git log (show commit)
+git log -p (show commit in detail)
+git log --stat (show commit summary)
+git log --pretty=oneline (show commit in oneline)
+git log --pretty=short (show commit in short)
+git log --since=2.day (show commit last 2 day)
+
+
+git remote add name url (create remote)
+git remote (show remote name)
+git push -u name master (repository upload on github)
+
+git branch (show all branch)
+git checkout -b name (create new branch)
+git checkout master (switch the branch)
+git merge branchname (merge master and branch)
+
+rm -rf .git (repository delete,git file delete)
+git diff (working directary and staging area compare)
+git diff --staged (compare last commit and now stageing area)
+git rm filename  (remove the file)
+git mv filename newname (rename file)
+git rm --cached filename (untracked file)
+
+
+.gitignore (.gitignore name ki file me jo file ka name(*.log) and folder(/dir/[only bahar vala], or ,dir[all] ) dalenge vo file ignore ho jayegi)
+
+git config --global alias.st status (sort code status = st only)
+
+***** ssh key set ***** 
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/id_ed25519
+tail ~/.ssh/id_ed25519.pub
+
