@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="baseview_company_form" model="ir.ui.view">
+            <field name="name">res.company.supplier.form - fixed_discount</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="sltech_header1"/>
+                    <field name="sltech_header2"/>
+                    <field name="sltech_header3"/>
+                    <field name="sltech_header4"/>
+                    <field name="sltech_footer"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

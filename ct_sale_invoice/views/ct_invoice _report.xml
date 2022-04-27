@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>  
+        <record id="paperformat_custom_invoice_report" model="report.paperformat">
+            <field name="name">Abs report</field>
+            <field name="default" eval="False" />
+            <field name="format">A4</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">45</field>
+        </record>     
+        <!-- QWeb Reports -->
+        <report
+            id="wt_account_invoices"
+            model="account.invoice"
+            string="Ads Invoice "
+            report_type="qweb-pdf"
+            name="ct_sale_invoice.ct_report_invoice"
+            file="wt_invoice_report.wt_report_invoice"
+            attachment="(object.state in ('open','in_payment','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+            print_report_name="(object._get_report_base_filename())"
+            groups="account.group_account_invoice"
+        />
+        <record id="wt_account_invoices" model="ir.actions.report">
+            <field name="paperformat_id" ref="ct_sale_invoice.paperformat_custom_invoice_report"/>
+        </record>
+    </data>
+</odoo>

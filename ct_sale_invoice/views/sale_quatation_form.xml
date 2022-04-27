@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id='sale_ouatation_extend' inherit_id='sale.report_saleorder_document' >
+        <xpath expr='//table/thead/tr/th' position='after'>
+
+
+                            <th class="text-right">width</th>
+                            <th class="text-right">length</th>
+                            <th class="text-right">total</th>
+
+        </xpath>
+            <xpath expr='//table/tbody/t/tr/t/td' position='after'>
+
+                                    <td class="text-right">
+                                        <span t-field="line.width"/>
+                                    </td>
+
+                                     <td class="text-right">
+                                        <span t-field="line.length"/>
+                                    </td>
+
+                                     <td class="text-right">
+                                        <span t-field="line.total"/>
+                                    </td>
+            </xpath>
+
+
+
+        </template>
+    </data>
+</odoo>
